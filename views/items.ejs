@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Items</title>
+  </head>
+  <body>
+    <%- include('partials/navigation') %>
+    <table>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Price</th>
+        <th>Stocks</th>
+        <th>Categories</th>
+      </tr>
+      <% for(const item of items){ %>
+      <tr>
+        <td><%= item.name%></td>
+        <td><%= item.description%></td>
+        <td><%= item.price%></td>
+        <td><%= item.stocks%></td>
+        <td><%= item.category.name%></td>
+      </tr>
+      <% } %>
+    </table>
+    <a href="/item/add">Add category</a>
+  </body>
+</html>
